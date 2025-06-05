@@ -32,7 +32,7 @@ export function DashboardTasksDataGrid() {
         renderCell: ({ row }) => <DataGridCell value={row.id.toString()} />,
       },
       {
-        minWidth: 360,
+        minWidth: 280,
         field: "title",
         headerName: "Título",
         renderCell: ({ row }) => <DataGridCell value={row.title} withTooltip />,
@@ -117,7 +117,7 @@ export function DashboardTasksDataGrid() {
   }, [listDashboardData]);
 
   return (
-    <Card sx={{ padding: 0 }}>
+    <Card sx={{ padding: 0, maxWidth:'76vw' }}>
       <Box padding={4} display="flex" flexDirection="column" gap={2}>
         <Typography variant="h2" sx={{ fontSize: 24, fontWeight: 500 }}>
           Tarefas com vencimento mais próximo

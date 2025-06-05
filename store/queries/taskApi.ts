@@ -12,7 +12,7 @@ import { PaginationQuery, RecordCreated } from "@/types/interfaces";
 
 export const taskApi = createApi({
   reducerPath: "taskApi",
-  tagTypes: ["TaskModule", "DashboardModule"],
+  tagTypes: ["TaskModule"],
   baseQuery: fetchBaseQuery({
     baseUrl: `${process.env.NEXT_PUBLIC_API_URL}/tasks`,
     credentials: "include",
@@ -41,7 +41,7 @@ export const taskApi = createApi({
         method: "POST",
         body,
       }),
-      invalidatesTags: ["TaskModule", "DashboardModule"],
+      invalidatesTags: ["TaskModule"],
     }),
     taskUpdate: builder.mutation<TaskUpdateResponse, TaskUpdateRequest>({
       query: (data) => ({
@@ -49,7 +49,7 @@ export const taskApi = createApi({
         method: "PUT",
         body: data.body,
       }),
-      invalidatesTags: ["TaskModule", "DashboardModule"],
+      invalidatesTags: ["TaskModule"],
     }),
     taskDetails: builder.query<TaskDetailsResponse, number>({
       query: (id) => ({
@@ -63,7 +63,7 @@ export const taskApi = createApi({
         url: `/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["TaskModule", "DashboardModule"],
+      invalidatesTags: ["TaskModule"],
     }),
   }),
 });

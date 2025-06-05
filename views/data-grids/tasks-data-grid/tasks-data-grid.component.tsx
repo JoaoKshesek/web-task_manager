@@ -207,7 +207,7 @@ export function TasksDataGrid() {
   }, [error]);
 
   return (
-    <Card>
+    <Card sx={{ maxWidth: "76vw" }}>
       <Toolbar />
       <Box padding={4}>
         <DataTablePaginated

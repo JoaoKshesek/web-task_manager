@@ -86,7 +86,7 @@ export const TaskDetailsContainer = ({ taskId }: TaskDetailsContainerProps) => {
                         <GridFieldView.FieldName>Status</GridFieldView.FieldName>
                         <GridFieldView.FieldChip
                           label={getOptionLabel(statusOptions, data.status)}
-                          color={getOptionColor(statusOptions, data.priority)}
+                          color={getOptionColor(statusOptions, data.status)}
                           size="small"
                         />
                       </GridFieldView.Item>

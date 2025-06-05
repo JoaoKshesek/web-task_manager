@@ -25,7 +25,7 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
           paddingTop: 16,
           gap: 4,
         }}
-      ></Box>
+      />
 
       <Box
         component="aside"
@@ -33,7 +33,7 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
           bgcolor: "background.default",
           minHeight: "100vh",
           width: "30vw",
-          minWidth: { xs: '100%', md: 500 },
+          minWidth: { xs: "100%", md: 500 },
           padding: 4,
           paddingTop: 20,
         }}

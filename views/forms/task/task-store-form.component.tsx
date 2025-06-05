@@ -10,6 +10,8 @@ import toast from "react-hot-toast";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Card, CardContent, Grid, Tab } from "@mui/material";
 import { useTaskCreateMutation, useTaskUpdateMutation } from "@/store/queries/taskApi";
+import { useAppDispatch } from "@/_libs";
+import { dashboardApi } from "@/store/queries/dashboardApi";
 
 interface Option {
   label: string;
@@ -75,6 +77,7 @@ const defaultValues: FieldValues = {
 
 export function TaskStoreForm({ taskId, formData }: TaskStoreFormProps) {
   const router = useRouter();
+  const dispatch = useAppDispatch();
 
   const [taskCreateRequest] = useTaskCreateMutation();
   const [taskUpdateRequest] = useTaskUpdateMutation();
@@ -105,12 +108,16 @@ export function TaskStoreForm({ taskId, formData }: TaskStoreFormProps) {
 
         toast.success("Tarefa editada com sucesso.");
 
+        dispatch(dashboardApi.util.invalidateTags(["DashboardModule"]));
+
         router.push(`/tarefas/${taskId}`);
       } else {
         const response = await taskCreateRequest(data).unwrap();
 
         toast.success("Tarefa criada com sucesso.");
 
+        dispatch(dashboardApi.util.invalidateTags(["DashboardModule"]));
+        
         router.push(`/tarefas/${response.id}`);
       }
     } catch (error: unknown) {
@@ -215,7 +222,7 @@ export function TaskStoreForm({ taskId, formData }: TaskStoreFormProps) {
                     color="secondary"
                     disabled={isSubmitting}
                     label="Resetar"
-                    sx={{ height: 40, width: { xs: '45%', md: 100 } }}
+                    sx={{ height: 40, width: { xs: "45%", md: 100 } }}
                     onClick={() => reset()}
                   />
                   <Button
@@ -223,7 +230,7 @@ export function TaskStoreForm({ taskId, formData }: TaskStoreFormProps) {
                     disabled={isSubmitting}
                     label={taskId ? "Editar" : "Criar"}
                     type="submit"
-                    sx={{ height: 40, width: { xs: '45%', md: 100 } }}
+                    sx={{ height: 40, width: { xs: "45%", md: 100 } }}
                   />
                 </Grid>
               </Grid>

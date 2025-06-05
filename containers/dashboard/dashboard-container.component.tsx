@@ -17,13 +17,13 @@ export const DashboardContainer = () => {
       <Grid container spacing={4}>
         <PageHeader title="Dashboard" />
         {!isLoadingDashboardStats && dashboardStats && (
-          <Grid container spacing={2} size={{ xs: 12, md: 12 }}>
+          <Grid container spacing={2} size={{ xs: 12, md: 12 }} sx={{maxWidth:'76vw'}}>
             {dashboardStats.stats.map((item, index) => {
               const label = getOptionLabel(statusOptions, item.status);
               const color = getOptionColor(statusOptions, item.status) || "default";
 
               return (
-                <Grid key={index} size={{ xs: 6, md: 2 }}>
+                <Grid key={index} size={{ xs: 6, md: 3 }}>
                   <Card
                     sx={{
                       p: 2,

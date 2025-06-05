@@ -23,7 +23,7 @@ export const DashboardContainer = () => {
               const color = getOptionColor(statusOptions, item.status) || "default";
 
               return (
-                <Grid key={index} size={3}>
+                <Grid key={index} size={2}>
                   <Card
                     sx={{
                       p: 2,
@@ -36,10 +36,10 @@ export const DashboardContainer = () => {
                       justifyContent: "space-between",
                     }}
                   >
-                    <Typography variant="subtitle2" sx={{ fontSize: 20, fontWeight: 600 }}>
+                    <Typography variant="subtitle2" sx={{ fontSize: 18, fontWeight: 600 }}>
                       {label}
                     </Typography>
-                    <Typography variant="body2" sx={{ fontSize: 30, fontWeight: 700 }}>
+                    <Typography variant="body2" sx={{ fontSize: 28, fontWeight: 700 }}>
                       {item.total}
                     </Typography>
                   </Card>

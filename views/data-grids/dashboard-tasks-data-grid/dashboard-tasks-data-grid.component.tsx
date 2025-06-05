@@ -118,8 +118,10 @@ export function DashboardTasksDataGrid() {
 
   return (
     <Card sx={{ padding: 0 }}>
-      <Box padding={4} display='flex' flexDirection='column' gap={2}>
-        <Typography variant="h2" sx={{fontSize: 24, fontWeight: 500}}>Tarefas mais próximas do vencimento</Typography>
+      <Box padding={4} display="flex" flexDirection="column" gap={2}>
+        <Typography variant="h2" sx={{ fontSize: 24, fontWeight: 500 }}>
+          Tarefas com vencimento mais próximo
+        </Typography>
         <DataTablePaginated
           rows={rows}
           rowCount={total}

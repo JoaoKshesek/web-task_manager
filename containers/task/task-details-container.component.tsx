@@ -68,11 +68,11 @@ export const TaskDetailsContainer = ({ taskId }: TaskDetailsContainerProps) => {
                       </GridFieldView.Item>
                       <GridFieldView.Item size={{ xs: 6, md: 3, lg: 2 }}>
                         <GridFieldView.FieldName>Data de Início</GridFieldView.FieldName>
-                        <GridFieldView.FieldValue>{formatDate(data.start_date_formatted)}</GridFieldView.FieldValue>
+                        <GridFieldView.FieldValue>{formatDate(data.start_date)}</GridFieldView.FieldValue>
                       </GridFieldView.Item>
                       <GridFieldView.Item size={{ xs: 6, md: 3, lg: 2 }}>
                         <GridFieldView.FieldName>Data de Vencimento</GridFieldView.FieldName>
-                        <GridFieldView.FieldValue>{formatDate(data.due_date_formatted)}</GridFieldView.FieldValue>
+                        <GridFieldView.FieldValue>{formatDate(data.due_date)}</GridFieldView.FieldValue>
                       </GridFieldView.Item>
                       <GridFieldView.Item size={{ xs: 6, md: 3, lg: 2 }}>
                         <GridFieldView.FieldName>Prioridade</GridFieldView.FieldName>

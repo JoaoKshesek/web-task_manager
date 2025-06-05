@@ -125,7 +125,7 @@ export function SignUpStoreForm() {
           />
         </Grid>
         <Grid size={12} margin="0 auto">
-          <Button variant="contained" disabled={false} label="Cadastrar" type="submit" fullWidth sx={{ height: 48 }} />
+          <Button variant="contained" disabled={isSubmitting} label="Cadastrar" type="submit" fullWidth sx={{ height: 48 }} />
         </Grid>
       </Grid>
     </form>

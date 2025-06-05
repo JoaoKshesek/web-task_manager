@@ -12,6 +12,7 @@ import { useAccountDeleteMutation, useAccountDetailsQuery } from "@/store/querie
 import { useAppDispatch } from "@/_libs";
 import { clearToken } from "@/store/reducers/commom/auth";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 const breadcrumbs: BreadcrumbsProps["breadcrumbs"] = [
   { label: "Dashboard", href: "/dashboard" },
@@ -19,6 +20,7 @@ const breadcrumbs: BreadcrumbsProps["breadcrumbs"] = [
 ];
 
 export const AccountDetailsContainer = () => {
+  const router = useRouter();
   const dispatch = useAppDispatch();
 
   const [tab, setTab] = useState<string>("account-details");
@@ -45,6 +47,7 @@ export const AccountDetailsContainer = () => {
       Cookies.remove("token");
       dispatch(clearToken());
 
+      router.push("/entrar");
       toast.success("Conta removida com sucesso.");
     } catch (err: any) {
       const apiErrors = err?.data?.errors || [];

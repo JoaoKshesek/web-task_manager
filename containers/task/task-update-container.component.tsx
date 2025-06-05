@@ -8,6 +8,7 @@ import { TaskStoreForm } from "@/views";
 import { useRouter } from "next/navigation";
 import { useTaskDetailsQuery } from "@/store/queries/taskApi";
 import toast from "react-hot-toast";
+import { toLocalDateOnly } from "@/_utils/date";
 
 interface TaskUpdateContainerProps {
   taskId: number;
@@ -42,8 +43,8 @@ export const TaskUpdateContainer = ({ taskId }: TaskUpdateContainerProps) => {
               taskId={data.id}
               formData={{
                 title: data.title,
-                start_date: data.start_date_original,
-                due_date: data.due_date_original,
+                start_date: toLocalDateOnly(data.start_date),
+                due_date: toLocalDateOnly(data.due_date),
                 priority: data.priority,
                 status: data.status,
                 description: data.description,

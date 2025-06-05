@@ -10,7 +10,9 @@ import { useSignInMutation } from "@/store/queries/authApi";
 import { Button, ControlledInput, ControlledPasswordInput } from "@/components";
 import toast from "react-hot-toast";
 import { Grid } from "@mui/material";
-import { useAuthentication } from "@/_libs";
+import { useAppDispatch, useAuthentication } from "@/_libs";
+import { dashboardApi } from "@/store/queries/dashboardApi";
+import { taskApi } from "@/store/queries/taskApi";
 
 interface FieldValues {
   email: string;
@@ -35,6 +37,7 @@ const defaultValues: FieldValues = {
 
 export function SignInStoreForm() {
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const { signIn } = useAuthentication({ middleware: "guest" });
 
   const [signInRequest] = useSignInMutation();
@@ -55,6 +58,10 @@ export function SignInStoreForm() {
       if (response.token) {
         signIn(response.token);
         Cookies.set("token", response.token);
+
+        dispatch(dashboardApi.util.invalidateTags(["DashboardModule"]));
+        dispatch(taskApi.util.invalidateTags(["TaskModule"]));
+
         router.push("/dashboard");
       }
     } catch (error: unknown) {

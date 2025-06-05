@@ -10,7 +10,9 @@ import { useSignUpMutation } from "@/store/queries/authApi";
 import { Button, ControlledInput, ControlledPasswordInput } from "@/components";
 import toast from "react-hot-toast";
 import { Grid } from "@mui/material";
-import { useAuthentication } from "@/_libs";
+import { useAppDispatch, useAuthentication } from "@/_libs";
+import { dashboardApi } from "@/store/queries/dashboardApi";
+import { taskApi } from "@/store/queries/taskApi";
 
 interface FieldValues {
   name: string;
@@ -46,6 +48,7 @@ const defaultValues: FieldValues = {
 
 export function SignUpStoreForm() {
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const { signIn } = useAuthentication({ middleware: "guest" });
 
   const [signUpRequest] = useSignUpMutation();
@@ -67,6 +70,8 @@ export function SignUpStoreForm() {
         signIn(response.token);
         toast.success("Conta criada com sucesso!");
         Cookies.set("token", response.token);
+        dispatch(dashboardApi.util.invalidateTags(["DashboardModule"]));
+        dispatch(taskApi.util.invalidateTags(["TaskModule"]));
         router.push("/dashboard");
       }
     } catch (error: unknown) {
@@ -125,7 +130,14 @@ export function SignUpStoreForm() {
           />
         </Grid>
         <Grid size={12} margin="0 auto">
-          <Button variant="contained" disabled={isSubmitting} label="Cadastrar" type="submit" fullWidth sx={{ height: 48 }} />
+          <Button
+            variant="contained"
+            disabled={isSubmitting}
+            label="Cadastrar"
+            type="submit"
+            fullWidth
+            sx={{ height: 48 }}
+          />
         </Grid>
       </Grid>
     </form>

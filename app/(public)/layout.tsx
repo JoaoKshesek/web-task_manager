@@ -33,6 +33,7 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
           bgcolor: "background.default",
           height: "100vh",
           width: "30vw",
+          minWidth: 500,
           padding: 4,
           paddingTop: 20,
         }}

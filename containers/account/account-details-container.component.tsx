@@ -76,11 +76,11 @@ export const AccountDetailsContainer = () => {
                 <CardContent>
                   <TabPanel value="account-details">
                     <GridFieldView.Container>
-                      <GridFieldView.Item size={1}>
+                      <GridFieldView.Item size={{ xs: 2, md: 1, lg: 1 }}>
                         <GridFieldView.FieldName>ID</GridFieldView.FieldName>
                         <GridFieldView.FieldValue>{data.id.toString()}</GridFieldView.FieldValue>
                       </GridFieldView.Item>
-                      <GridFieldView.Item size={{ xs: 12, md: 5, lg: 3 }}>
+                      <GridFieldView.Item size={{ xs: 10, md: 5, lg: 3 }}>
                         <GridFieldView.FieldName>Nome</GridFieldView.FieldName>
                         <GridFieldView.FieldValue>{data.name}</GridFieldView.FieldValue>
                       </GridFieldView.Item>

@@ -58,11 +58,11 @@ export const TaskDetailsContainer = ({ taskId }: TaskDetailsContainerProps) => {
                 <CardContent>
                   <TabPanel value="task-details">
                     <GridFieldView.Container>
-                      <GridFieldView.Item size={1}>
+                      <GridFieldView.Item size={{ xs: 2, md: 1, lg: 1 }}>
                         <GridFieldView.FieldName>ID</GridFieldView.FieldName>
                         <GridFieldView.FieldValue>{data.id.toString()}</GridFieldView.FieldValue>
                       </GridFieldView.Item>
-                      <GridFieldView.Item size={{ xs: 12, md: 5, lg: 3 }}>
+                      <GridFieldView.Item size={{ xs: 10, md: 5, lg: 3 }}>
                         <GridFieldView.FieldName>Título</GridFieldView.FieldName>
                         <GridFieldView.FieldValue>{data.title}</GridFieldView.FieldValue>
                       </GridFieldView.Item>

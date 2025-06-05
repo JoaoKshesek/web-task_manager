@@ -96,7 +96,7 @@ export function AccountUpdateStoreForm({ formData }: AccountUpdateStoreFormProps
           <CardContent>
             <TabPanel value="account-details">
               <Grid container spacing={2}>
-                <Grid size={5}>
+                <Grid size={{ xs: 12, md: 5 }}>
                   <ControlledInput<FieldValues>
                     label="Nome"
                     name="name"
@@ -105,7 +105,7 @@ export function AccountUpdateStoreForm({ formData }: AccountUpdateStoreFormProps
                     errorMessage={errors.name?.message}
                   />
                 </Grid>
-                <Grid size={4}>
+                <Grid size={{ xs: 12, md: 4 }}>
                   <ControlledInput<FieldValues>
                     label="E-mail"
                     name="email"
@@ -115,7 +115,7 @@ export function AccountUpdateStoreForm({ formData }: AccountUpdateStoreFormProps
                   />
                 </Grid>
 
-                <Grid size={3}>
+                <Grid size={{ xs: 12, md: 3 }}>
                   <ControlledPasswordInput<FieldValues>
                     label="Senha"
                     name="password"

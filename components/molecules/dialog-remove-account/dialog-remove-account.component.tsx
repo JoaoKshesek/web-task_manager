@@ -35,7 +35,7 @@ export function DialogRemoveAccount({ handleClose, handleConfirm, isLoading, ...
       {...dialogProps}
     >
       <DialogTitle
-        sx={{ background: theme.palette.primary.main, color: theme.palette.divider }}
+        sx={{ background: theme.palette.primary.main, color: theme.palette.light[300] }}
         id="dialog-remove-account-title"
       >
         Tem certeza que deseja deletar sua conta?
@@ -47,7 +47,7 @@ export function DialogRemoveAccount({ handleClose, handleConfirm, isLoading, ...
       </DialogContent>
       <DialogActions
         className="dialog-actions-dense"
-        sx={{ justifyContent: "space-between", padding: 2, borderTop: `1px solid ${theme.palette.light[300]}` }}
+        sx={{ justifyContent: "space-between", padding: 2, borderTop: `1px solid ${theme.palette.divider}` }}
       >
         <Button
           onClick={handleClose}

@@ -10,7 +10,7 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
       <Box
         component="main"
         sx={{
-          height: "100vh",
+          minHeight: "100vh",
           width: "70vw",
           bgcolor: "background.purple",
           backgroundImage: `
@@ -31,9 +31,9 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
         component="aside"
         sx={{
           bgcolor: "background.default",
-          height: "100vh",
+          minHeight: "100vh",
           width: "30vw",
-          minWidth: 500,
+          minWidth: { xs: '100%', md: 500 },
           padding: 4,
           paddingTop: 20,
         }}

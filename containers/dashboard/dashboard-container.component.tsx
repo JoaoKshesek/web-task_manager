@@ -23,7 +23,7 @@ export const DashboardContainer = () => {
               const color = getOptionColor(statusOptions, item.status) || "default";
 
               return (
-                <Grid key={index} size={2}>
+                <Grid key={index} size={{ xs: 6, md: 2 }}>
                   <Card
                     sx={{
                       p: 2,

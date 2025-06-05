@@ -25,11 +25,18 @@ interface NavSection {
   sectionTitle: string;
   items: NavItem[];
 }
+interface SidebarProps {
+  onItemClick: () => void;
+}
 
-export const Sidebar: FC = () => {
+export const Sidebar: FC<SidebarProps> = ({ onItemClick }) => {
   const pathname = usePathname();
   const { signOut } = useAuthentication({ middleware: "auth" });
   const [openDropdowns, setOpenDropdowns] = useState<Record<string, boolean>>({});
+
+  const handleItemClick = () => {
+    if (onItemClick) onItemClick();
+  };
 
   const handleToggle = (label: string) => {
     setOpenDropdowns((prev) => ({ ...prev, [label]: !prev[label] }));
@@ -140,6 +147,10 @@ export const Sidebar: FC = () => {
                 <ListItem key={item.label} disablePadding>
                   <ListItemButton
                     {...buttonProps}
+                    onClick={() => {
+                      buttonProps.onClick && buttonProps.onClick();
+                      handleItemClick();
+                    }}
                     sx={{
                       gap: 1,
                       display: "flex",

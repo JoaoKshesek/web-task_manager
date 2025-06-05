@@ -150,7 +150,7 @@ export function TaskStoreForm({ taskId, formData }: TaskStoreFormProps) {
                     errorMessage={errors.title?.message}
                   />
                 </Grid>
-                <Grid size={{ xs: 6, md: 3, lg: 2 }}>
+                <Grid size={{ xs: 12, md: 3, lg: 2 }}>
                   <ControlledDatePicker
                     label="Data de Início"
                     name="start_date"
@@ -159,7 +159,7 @@ export function TaskStoreForm({ taskId, formData }: TaskStoreFormProps) {
                     errorMessage={errors.start_date?.message}
                   />
                 </Grid>
-                <Grid size={{ xs: 6, md: 3, lg: 2 }}>
+                <Grid size={{ xs: 12, md: 3, lg: 2 }}>
                   <ControlledDatePicker
                     label="Data de Vencimento"
                     name="due_date"
@@ -168,7 +168,7 @@ export function TaskStoreForm({ taskId, formData }: TaskStoreFormProps) {
                     errorMessage={errors.due_date?.message}
                   />
                 </Grid>
-                <Grid size={{ xs: 6, md: 3, lg: 2 }}>
+                <Grid size={{ xs: 12, md: 3, lg: 2 }}>
                   <ControlledSelect
                     label="Prioridade"
                     name="priority"
@@ -178,7 +178,7 @@ export function TaskStoreForm({ taskId, formData }: TaskStoreFormProps) {
                     errorMessage={errors.priority?.message}
                   />
                 </Grid>
-                <Grid size={{ xs: 6, md: 3, lg: 2 }}>
+                <Grid size={{ xs: 12, md: 3, lg: 2 }}>
                   <ControlledSelect
                     label="Status"
                     name="status"
@@ -209,13 +209,13 @@ export function TaskStoreForm({ taskId, formData }: TaskStoreFormProps) {
                   />
                 </Grid>
 
-                <Grid container gap={2} size={9} justifyContent="flex-end">
+                <Grid container gap={2} size={{ xs: 12, md: 9 }} justifyContent="flex-end">
                   <Button
                     variant="outlined"
                     color="secondary"
                     disabled={isSubmitting}
                     label="Resetar"
-                    sx={{ height: 40, width: 100 }}
+                    sx={{ height: 40, width: { xs: '45%', md: 100 } }}
                     onClick={() => reset()}
                   />
                   <Button
@@ -223,7 +223,7 @@ export function TaskStoreForm({ taskId, formData }: TaskStoreFormProps) {
                     disabled={isSubmitting}
                     label={taskId ? "Editar" : "Criar"}
                     type="submit"
-                    sx={{ height: 40, width: 100 }}
+                    sx={{ height: 40, width: { xs: '45%', md: 100 } }}
                   />
                 </Grid>
               </Grid>

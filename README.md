@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web - Task Manager
 
-## Getting Started
+Aplicativo feito em Next JS
 
-First, run the development server:
+## 🚀 Começando
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+
+Consulte **Instalação e configuração** para saber como implantar o projeto.
+
+### 📋 Pré-requisitos
+
+De que coisas você precisa para instalar o software e como instalá-lo?
+
+```
+Yarn
+NodeJs (v18^)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔧 Instalação e configuração
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Altere as configurações no `.env` antes de continuar com os passos da instalação. Caso ele não exista renomei o arquivo `.env.example` para `.env`
 
-## Learn More
+#### Instalar dependências
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+$ yarn
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Inicialização da aplicação
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Inicializar aplicação
 
-## Deploy on Vercel
+```bash
+$ yarn dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Acesse a aplicação na url: http://localhost:3000
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Gerar build de produção
+
+```bash
+$ yarn build
+```
+
+Será gerado uma pasta chamada `/out` com todos os arquivos.

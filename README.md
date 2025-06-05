@@ -1,6 +1,6 @@
 # Web - Task Manager
 
-Aplicativo feito em Next JS
+Aplicação feito em Next JS
 
 ## 🚀 Começando
 
@@ -44,5 +44,3 @@ Acesse a aplicação na url: http://localhost:3000
 ```bash
 $ yarn build
 ```
-
-Será gerado uma pasta chamada `/out` com todos os arquivos.

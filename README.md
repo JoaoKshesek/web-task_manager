@@ -2,6 +2,9 @@
 
 Aplicação feito em Next JS
 
+![image](https://github.com/user-attachments/assets/77da02f7-bfea-44e6-baec-d29907dc515c)
+
+
 ## 🚀 Começando
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
